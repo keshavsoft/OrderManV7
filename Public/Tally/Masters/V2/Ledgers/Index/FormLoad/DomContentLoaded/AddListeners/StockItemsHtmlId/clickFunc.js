@@ -16,7 +16,7 @@ const buildUi = async () => {
         endPoints: {
             create: "/Api/V9/ItemsTable/Insert",
             update: "",
-            read: "/Api/V1/ItemsTable/ShowAll",
+            read: "/Api/V1/StockItems/ShowAll",
             find: "/Api/V9/BillsTable/find"
         },
         options: {
