@@ -14,6 +14,8 @@ const StartFunc = async () => {
     });
 
     fs.writeFileSync(dataPath, JSON.stringify(LocalNewArray));
+
+    return await LocalNewArray.length;
 };
 
 export { StartFunc };

@@ -1,11 +1,11 @@
-import { StartFunc as ServiceToRead } from './service.js';
+import { fromJsonPath } from './service.js';
 import { ConflictError, StorageError } from './errors.js';
 
-const postFilterDataFromBodyFunc = async (req, res) => {
+const getFunc = (req, res) => {
     try {
-        const message = ServiceToRead();
+        const message = fromJsonPath();
 
-        res.type("text/plain").send(message);
+        res.type("application/json").send(message);
     } catch (err) {
         if (err instanceof ConflictError)
             return res.status(409).send(err.message);
@@ -18,4 +18,4 @@ const postFilterDataFromBodyFunc = async (req, res) => {
     }
 };
 
-export { postFilterDataFromBodyFunc };
+export { getFunc };
