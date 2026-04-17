@@ -5,6 +5,7 @@ import http from 'http';
 
 import { router as routerFromFromTally } from "./FromTally/routes.js";
 import { router as routerFromApi } from "./Api/routes.js";
+import { router as routerFromV6 } from "./V6/routes.js";
 
 const app = express();
 const server = http.createServer(app);
@@ -15,6 +16,7 @@ app.use(express.static('Public'));
 
 app.use('/FromTally', routerFromFromTally);
 app.use('/Api', routerFromApi);
+app.use('/V6', routerFromV6);
 
 function normalizePort(val) {
     var port = parseInt(val, 10);
